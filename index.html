@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphique en courbe</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js -->
+</head>
+<body>
+
+    <canvas id="myChart" width="600" height="300"></canvas>
+
+    <script>
+        // 2️⃣ Sélectionner le canvas
+        const ctx = document.getElementById('myChart').getContext('2d');
+
+        // 3️⃣ Création du graphique
+        new Chart(ctx, {
+            type: 'line', // Type de graphique : ligne
+            data: {
+                labels: [
+                    '01-2025', '02-2025', '03-2025', '04-2025', '05-2025',
+                    '06-2025', '07-2025', '08-2025', '09-2025', '10-2025',
+                    '11-2025', '12-2025'
+                ],
+                datasets: [{
+                    label: 'Évolution des valeurs',
+                    data: [62200, 62000, 62150, 62250, 62350, 62450, 62550, 62600, 62650, 62700, 62750, 62800],
+                    borderColor: 'yellow', // Couleur de la ligne
+                    backgroundColor: 'rgba(255, 255, 0, 0.2)', // Remplissage sous la courbe
+                    pointBackgroundColor: 'yellow', // Couleur des points
+                    pointBorderColor: 'yellow',
+                    pointRadius: 4, // Taille des points
+                    fill: true, // Active le remplissage sous la courbe
+                    tension: 0.4 // Ajoute un effet courbé
+                }]
+            },
+            options: {
+                responsive: false, // Désactive la responsivité pour éviter les déformations
+                scales: {
+                    x: { grid: { display: true } },
+                    y: { grid: { display: true } }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

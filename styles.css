@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.container {
+    max-width: 90%;
+    margin: auto;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+
+.filters input,
+.filters select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ddd;
+}
+
+.pack-header {
+    background-color: #eee;
+    font-weight: bold;
+}
+
+button {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.detail-btn {
+    background-color: yellow;
+}
+
+.edit-btn {
+    background-color: lightgray;
+}
+
+.doc-btn {
+    background-color: gray;
+    color: white;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Table</title>
+    <link rel="stylesheet" href="styles1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Formulaire -->
+        <div class="form-container">
+            <h3>Rechercher un contrat</h3>
+            <label for="name">Nom :</label>
+            <input type="text" id="name" placeholder="Nom...">
+
+            <label for="company">Compagnie :</label>
+            <select id="company">
+                <option value="">Toutes</option>
+                <option value="AXA">AXA</option>
+                <option value="Allianz">Allianz</option>
+                <option value="Baloise">Baloise</option>
+            </select>
+
+            <label for="status">Statut :</label>
+            <select id="status">
+                <option value="">Tous</option>
+                <option value="En Cours">En Cours</option>
+                <option value="Expiré">Expiré</option>
+            </select>
+
+            <button type="button" onclick="filterTable()">Filtrer</button>
+        </div>
+
+        <!-- Tableau -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pack</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Compagnie</th>
+                        <th>Formule</th>
+                        <th>Plaque</th>
+                        <th>Date de début</th>
+                        <th>Statut</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="pack-header" onclick="togglePack('pack1')">
+                        <td colspan="7">
+                            <strong>
+                                <i class="fa-solid fa-chevron-down"></i> Pack : 0000016996
+                            </strong>
+                        </td>
+                        <td colspan="2" class="text-right">
+                            <a href="#" class="action-btn"><i class="fa-solid fa-pen-to-square"></i> Modifier</a>
+                            <a href="#" class="action-btn"><i class="fa-solid fa-download"></i> Documents</a>
+                        </td>
+                    </tr>
+
+                    <tr class="pack-details pack1">
+                        <td></td>
+                        <td>NOYA</td>
+                        <td>MANAGEMENT</td>
+                        <td>EUROP ASSISTANCE (Belgium) S.A.</td>
+                        <td>Assistance Auto</td>
+                        <td></td>
+                        <td>27/01/2025</td>
+                        <td>En Cours</td>
+                        <td><button class="detail-btn"><i class="fa-solid fa-eye"></i> Détail</button></td>
+                    </tr>
+
+                    <tr class="pack-details pack1">
+                        <td></td>
+                        <td>Soufiane</td>
+                        <td>MANAGEMENT</td>
+                        <td>Baloise Belgium NV</td>
+                        <td>Omnium Sérénité</td>
+                        <td>2GMF392</td>
+                        <td>27/01/2025</td>
+                        <td>En Cours</td>
+                        <td><button class="detail-btn"><i class="fa-solid fa-eye"></i> Détail</button></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>

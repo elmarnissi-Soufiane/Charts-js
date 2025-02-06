@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 20px; 
+            background-color: #f0f0f0; 
+        }
+        .menu {
+            width: 250px;
+            border: 1px solid #ddd;
+            background-color: white;
+            position: relative;
+        }
+        .menu-item {
+            padding: 10px 15px;
+            color: #333;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            position: relative;
+        }
+        .menu-item:hover,
+        .menu-item.selected {
+            background-color: #333;
+            color: white;
+            position: relative;
+        }
+        .menu-item:hover::after,
+        .menu-item.selected::after {
+            content: '';
+            position: absolute;
+            right: -20px;
+            top: 0;
+            bottom: 0;
+            width: 0;
+            height: 0;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-left: 20px solid #333;
+            z-index: 1;
+        }
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <div class="menu-item selected">Général</div>
+        <div class="menu-item">Assureur précédent</div>
+        <div class="menu-item">Sinistres sur 5 ans</div>
+        <div class="menu-item">Autres conducteurs</div>
+        <div class="menu-item">Utilisation du véhicule</div>
+        <div class="menu-item">Véhicule</div>
+        <div class="menu-item">Remorques</div>
+        <div class="menu-item">Formule choisie et confirmation</div>
+    </div>
+
+    <script>
+        // document.querySelectorAll('.menu-item').forEach(item => {
+        //     item.addEventListener('mouseover', () => {
+        //         // Remove selected class from other items
+        //         document.querySelectorAll('.menu-item').forEach(i => i.classList.remove('selected'));
+        //         item.classList.add('selected');
+        //     });
+        // });
+
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('mouseover', () => {
+                // Ne supprime pas la classe selected si l'élément est déjà sélectionné
+                if (!item.classList.contains('selected')) {
+                    document.querySelectorAll('.menu-item').forEach(i => i.classList.remove('selected'));
+                    item.classList.add('selected');
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>

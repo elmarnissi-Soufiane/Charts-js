@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .section p {
+            margin: 0;
+            margin-bottom: 10px;
+        }
+        .section .sub-section {
+            margin-left: 20px;
+        }
+        .section .sub-section p {
+            margin-bottom: 5px;
+        }
+        .section .sub-section label {
+            font-weight: normal;
+        }
+        .button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Preneur</h1>
+
+    <div class="section">
+        <label>Nom *</label>
+        <p>Pignon</p>
+    </div>
+
+    <div class="section">
+        <label>Prénom *</label>
+        <p>François</p>
+        <div class="sub-section">
+            <label>Date de naissance *</label>
+            <p>DD/MM/YYYY</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <label>Téléphone *</label>
+        <p>081 23 45 67</p>
+    </div>
+
+    <div class="section">
+        <label>Email *</label>
+        <p>francois.pignon@mail.be</p>
+    </div>
+
+    <div class="section">
+        <label>Mode de règlement *</label>
+        <p>Virement</p>
+    </div>
+
+    <h1>Assurés</h1>
+
+    <div class="section">
+        <label>Informations personnelles</label>
+        <div class="sub-section">
+            <label>Assurés</label>
+            <p>Adresse</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <label>Assurés *</label>
+        <div class="sub-section">
+            <label>Nom</label>
+            <p>Prénom *</p>
+            <label>Date de naissance *</label>
+            <p>Date de permis</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <label>Assuré</label>
+        <p>DOMINAYYYY</p>
+        <button class="button">+ Ajouter un membre</button>
+    </div>
+
+    <h1>Adresse</h1>
+
+    <div class="section">
+        <label>Rue *</label>
+        <p>Rue du petit Cheval de Marège</p>
+    </div>
+
+    <div class="section">
+        <label>Code postal *</label>
+        <p>1000</p>
+        <label>Ville *</label>
+        <p>Bruxelles</p>
+    </div>
+
+    <div class="section">
+        <label>Numéro *</label>
+        <p>1</p>
+        <label>Pays *</label>
+        <p>Belgique</p>
+    </div>
+
+    <button class="button">Étape suivante ></button>
+
+</body>
+</html>

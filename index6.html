@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Tableau</title>
+    <style>
+        :host {
+            width: 75%;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background: #f8f8f8;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        thead {
+            background-color: #333333;
+            color: white;
+        }
+
+        thead:hover {
+            background-color: #3c3c3c;
+            color: white;
+        }
+
+        thead th {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        td {
+            border: none;
+        }
+
+        .detail-btn {
+            background-color: #c4d500;
+            color: #3c3c3c;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .detail-btn:hover {
+            background-color: #333;
+            color: white;
+        }
+
+        .detail-btn i {
+            font-size: 16px;
+        }
+
+        .pack-details {
+            background-color: #f5f5f5;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            animation: slideDown 0.3s ease-out forwards;
+            color: #3c3c3c;
+            border-bottom: 1px solid #3c3c3c;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .pack-details:hover {
+            background-color: #e0e0e0;
+        }
+
+        .details-row {
+            background-color: #f9f9f9;
+        }
+
+        .details-content {
+            padding: 20px;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .details-section {
+            border: 1px solid #e0e0e0;
+            padding: 15px;
+        }
+
+        .section-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #4a4a4a;
+        }
+
+        .contracts-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .contracts-table th,
+        .contracts-table td {
+            border: 1px solid #e0e0e0;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Preneur</th>
+                    <th>Assuré(s)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <p><strong>Nom:</strong> GENGLER</p>
+                        <p><strong>Prénom:</strong> Christianne</p>
+                        <p><strong>Date de naissance:</strong> 26/05/1978</p>
+                        <p><strong>Date de permis:</strong> 08/07/1996</p>
+                        <p><strong>Adresse e-mail:</strong> genglerch@gmail.com</p>
+                        <p><strong>Téléphone:</strong> 00352/691.46.13.71</p>
+                        <p><strong>Adresse postale:</strong> Rue du Lingenthal 45 6700 Arlon</p>
+                    </td>
+                    <td>
+                        <p><strong>Nom:</strong> GENGLER</p>
+                        <p><strong>Prénom:</strong> Christianne</p>
+                        <p><strong>Date de naissance:</strong> 26/05/1978</p>
+                        <p><strong>Date de permis:</strong> 08/07/1996</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="details-content">
+            <div class="details-grid">
+                <div class="details-section">
+                    <div class="section-title">Contrats</div>
+                    <table class="contracts-table">
+                        <thead>
+                            <tr>
+                                <th>Contrat</th>
+                                <th>Formule</th>
+                                <th>Risque</th>
+                                <th>Date d'effet</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Automobile</td>
+                                <td>Omnium Sérénité</td>
+                                <td>1DIV000</td>
+                                <td>01/03/2025</td>
+                            </tr>
+                            <tr>
+                                <td>Individuelle Accident</td>
+                                <td>Individuelle Accident Sérénité</td>
+                                <td>01/03/2025</td>
+                            </tr>
+                            <tr>
+                                <td>Protection Juridique</td>
+                                <td>PJ Auto</td>
+                                <td>01/03/2025</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

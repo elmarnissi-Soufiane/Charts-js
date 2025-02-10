@@ -1,0 +1,142 @@
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th (click)="sortPacks('number')">
+                    Pack
+                    <i class="fas" [ngClass]="getSortIconClass('number')"></i>
+                </th>
+                <th (click)="sortPacks('nom')">
+                    Nom
+                    <i class="fas" [ngClass]="getSortIconClass('nom')"></i>
+                </th>
+                <th (click)="sortPacks('prenom')">
+                    Prénom
+                    <i class="fas" [ngClass]="getSortIconClass('prenom')"></i>
+                </th>
+                <th (click)="sortPacks('compagnie')">
+                    Compagnie
+                    <i class="fas" [ngClass]="getSortIconClass('compagnie')"></i>
+                </th>
+                <th (click)="sortPacks('formule')">
+                    Formule
+                    <i class="fas" [ngClass]="getSortIconClass('formule')"></i>
+                </th>
+                <th (click)="sortPacks('risque')">
+                    Risque
+                    <i class="fas" [ngClass]="getSortIconClass('risque')"></i>
+                </th>
+                <th (click)="sortPacks('plaque')">
+                    Plaque
+                    <i class="fas" [ngClass]="getSortIconClass('plaque')"></i>
+                </th>
+                <th (click)="sortPacks('dateDebut')">
+                    Date de début
+                    <i class="fas" [ngClass]="getSortIconClass('dateDebut')"></i>
+                </th>
+                <th (click)="sortPacks('statut')">
+                    Statut
+                    <i class="fas" [ngClass]="getSortIconClass('statut')"></i>
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (pack of paginatedPacks; track pack.number) {
+            <tr class="pack-header">
+                <td colspan="9" (click)="togglePack(pack)">
+                    <strong>
+                        <i class="fas" [ngClass]="{
+              'fa-chevron-down': !pack.expanded, 
+              'fa-chevron-up': pack.expanded
+            }"></i> Pack 22 : {{ pack.number }}
+                    </strong>
+                </td>
+                <td colspan="2" class="text-right">
+                    <a href="#" class="action-btn"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a href="#" class="action-btn"><i class="fa-solid fa-download"></i></a>
+                </td>
+            </tr>
+
+            @if (pack.expanded) {
+            @for (contract of pack.contracts; track contract.plaque) {
+            <tr class="pack-details">
+                <td></td>
+                <td>{{ contract.nom }}</td>
+                <td>{{ contract.prenom }}</td>
+                <td>{{ contract.compagnie }}</td>
+                <td>{{ contract.formule }}</td>
+                <td>{{ contract.risque }}</td>
+                <td>{{ contract.plaque }}</td>
+                <td>{{ contract.dateDebut }}</td>
+                <td>{{ contract.statut }}</td>
+                <td>
+                    <button class="detail-btn" (click)="toggleDetails(contract)">
+                        <i class="fa-solid fa-eye"></i> Détail
+                    </button>
+                </td>
+            </tr>
+
+            @if (contract.detailsVisible) {
+            <tr class="details-row">
+                <td colspan="11">
+                    <!-- Add the details table structure here -->
+                    <div class="container">
+                        <h1 class="title">{{ contract.nom }} {{ contract.prenom }}</h1>
+
+                        <div class="info-tables">
+                            <div class="table-section">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="label">N° de pack</td>
+                                            <td class="value">{{ pack.number }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="label">Statut</td>
+                                            <td class="value status">{{ contract.statut }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="label">Formule</td>
+                                            <td class="value">{{ contract.formule }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="label">Formule</td>
+                                            <td class="value">{{ customer.formule }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="label">Risque</td>
+                                            <td class="value">{{ customer.risque }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="label">Date d'effet</td>
+                                            <td class="value">{{ customer.dateEffet }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="label">Date de résiliation</td>
+                                            <td class="value">{{ customer.dateResiliation || 'N/A' }}</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- componenet details -->
+                    <app-details-dashboard-courtier [preneur]="getPreneur(contract)" [assures]="getAssures(contract)">
+                    </app-details-dashboard-courtier>
+
+                </td>
+            </tr>
+            }
+            }
+            }
+            }
+        </tbody>
+    </table>
+
+    <app-pagination-courtier [currentPage]="currentPage" [itemsPerPage]="itemsPerPage"
+        [totalItems]="filteredPacks.length" (pageChange)="onPageChange($event)"></app-pagination-courtier>
+</div>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Step</title>
+    <style>
+        /* Reset basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        /* Navigation Bar */
+        .step-nav {
+            width: 80%;
+            max-width: 1200px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid #ddd;
+        }
+
+        .step-nav ul {
+            list-style: none;
+            display: flex;
+            width: 100%;
+            position: relative;
+            height: 70px;
+        }
+
+        .step-nav li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            background: #fff;
+            color: #333;
+            position: relative;
+            text-align: center;
+            flex: 1;
+            min-width: 100px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        /* Remove special styling for the first <li> */
+        .step-nav li:first-child {
+            background: #fff;
+            /* Same as others */
+            color: #333;
+            /* Same as others */
+            margin-right: 0;
+            /* Remove the margin */
+        }
+
+        .step-nav li:first-child i {
+            color: #666;
+            /* Same as others */
+        }
+
+        /* Add triangle to the first <li> */
+        .step-nav li:first-child::after {
+            content: "";
+            position: absolute;
+            right: -20px;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-top: 35px solid transparent;
+            border-bottom: 35px solid transparent;
+            border-left: 20px solid #fff;
+            z-index: 1;
+        }
+
+        /* Add triangle to the last <li> */
+        .step-nav li:last-child::after {
+            content: "";
+            position: absolute;
+            right: -20px;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-top: 35px solid transparent;
+            border-bottom: 35px solid transparent;
+            border-left: 20px solid #fff;
+            z-index: 1;
+        }
+
+        /* Icon styles */
+        .step-nav li i {
+            font-size: 20px;
+            color: #666;
+            transition: color 0.3s ease;
+        }
+
+        /* Text styles */
+        .step-nav li span {
+            font-size: 12px;
+            text-align: center;
+            max-width: 100px;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        /* Hover effects */
+        .step-nav li:hover {
+            background: #333;
+            /* Background color on hover */
+        }
+
+        .step-nav li:hover i {
+            color: #b2d239;
+            /* Icon color on hover */
+        }
+
+        .step-nav li:hover span {
+            color: #b2d239;
+            /* Text color on hover */
+        }
+
+        /* Triangle color on hover */
+        .step-nav li:hover::after {
+            border-left-color: #333;
+            /* Triangle color on hover */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .step-nav li span {
+                font-size: 11px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .step-nav ul {
+                flex-wrap: wrap;
+            }
+
+            .step-nav li {
+                min-width: 25%;
+            }
+
+            .step-nav li::after {
+                display: none;
+                /* Hide triangles on smaller screens */
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <nav class="step-nav">
+        <ul>
+            <li>
+                <i class="fas fa-phone"></i>
+                <span>Coordonnées</span>
+            </li>
+            <li>
+                <i class="fas fa-car"></i>
+                <span>Automobile</span>
+            </li>
+            <li>
+                <i class="fas fa-fire"></i>
+                <span>Incendie</span>
+            </li>
+            <li>
+                <i class="fas fa-shield-alt"></i>
+                <span>Responsabilité Civile Famille</span>
+            </li>
+            <li>
+                <i class="fas fa-gavel"></i>
+                <span>Protection Juridique</span>
+            </li>
+            <li>
+                <i class="fas fa-hands-helping"></i>
+                <span>Assistance</span>
+            </li>
+            <li>
+                <i class="fas fa-user-shield"></i>
+                <span>Individuelle accident</span>
+            </li>
+            <li>
+                <i class="fas fa-bars"></i>
+                <span>Récapitulatif</span>
+            </li>
+        </ul>
+    </nav>
+</body>
+
+</html>

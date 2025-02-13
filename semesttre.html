@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .nav {
+            background: #444;
+            display: flex;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .nav-item {
+            padding: 15px 20px;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 100px;
+            font-size: 12px;
+            background: #444;
+            border-right: 1px solid #555;
+        }
+
+        .nav-item:hover {
+            background: #555;
+        }
+
+        .nav-item.active {
+            background: #e0e0e0;
+            color: #333;
+        }
+
+        .nav-icon {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: #f5f5f5;
+            padding: 15px;
+        }
+
+        .sidebar-item {
+            padding: 10px;
+            background: #e0e0e0;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+
+        .sidebar-item.active {
+            background: #444;
+            color: white;
+        }
+
+        .form-section {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            background: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #c82333;
+        }
+
+        .add-member {
+            padding: 8px 16px;
+            background: #444;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .add-member:before {
+            content: '+';
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <a href="#" class="nav-item active">
+            <span class="nav-icon">📞</span>
+            Coordonnées
+        </a>
+        <a href="#" class="nav-item">
+            <span class="nav-icon">🚗</span>
+            Automobile
+        </a>
+        <a href="#" class="nav-item">
+            <span class="nav-icon">🔥</span>
+            Incendie
+        </a>
+        <a href="#" class="nav-item">
+            <span class="nav-icon">🔒</span>
+            Responsabilité Civile Famille
+        </a>
+        <a href="#" class="nav-item">
+            <span class="nav-icon">⚖️</span>
+            Protection Juridique
+        </a>
+        <a href="#" class="nav-item">
+            <span class="nav-icon">💁</span>
+            Assistance
+        </a>
+        <a href="#" class="nav-item">
+            <span class="nav-icon">👤</span>
+            Individuelle accident
+        </a>
+        <a href="#" class="nav-item">
+            <span class="nav-icon">📋</span>
+            Récapitulatif
+        </a>
+    </nav>
+
+    <div class="container">
+        <div class="form-section">
+            <div class="form-group">
+                <label class="form-label">Email *</label>
+                <input type="email" class="form-control" value="sascha.hamende@geoteam.be">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Mode de règlement *</label>
+                <select class="form-control">
+                    <option>Virement</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2>Assurés</h2>
+            <div class="grid">
+                <div class="form-group">
+                    <label class="form-label">Assurés *</label>
+                    <input type="text" class="form-control" value="Assuré">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Nom</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Prénom *</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Date de naissance *</label>
+                    <input type="text" class="form-control" placeholder="DD/MM/YYYY">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Date de permis</label>
+                    <input type="text" class="form-control" placeholder="DD/MM/YYYY">
+                </div>
+            </div>
+            <button class="add-member">Ajouter un membre</button>
+        </div>
+
+        <div class="form-section">
+            <h2>Adresse</h2>
+            <div class="grid">
+                <div class="form-group">
+                    <label class="form-label">Rue *</label>
+                    <input type="text" class="form-control" value="Rue Léon François">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Numéro *</label>
+                    <input type="text" class="form-control" value="48">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Code postal *</label>
+                    <input type="text" class="form-control" value="5170">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Ville *</label>
+                    <input type="text" class="form-control" value="Profondeville">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Pays *</label>
+                    <input type="text" class="form-control" value="Belgique">
+                </div>
+            </div>
+        </div>
+
+        <button class="btn">Quitter sans sauvegarder</button>
+    </div>
+</body>
+
+</html>

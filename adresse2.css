@@ -1,0 +1,144 @@
+/* Style général du conteneur */
+.container {
+    background: white;
+}
+
+/* Style du menu des biens */
+.bien-tabs {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
+}
+
+.bien-item {
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 0;
+}
+
+.bien-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #c4d500;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    color: #333;
+}
+
+.bien-link:hover {
+    background-color: #b2d239;
+    text-decoration: none;
+    box-shadow: 0px 4px 8px #a2c131;
+    transform: translateY(-3px);
+}
+
+.icon {
+    margin-right: 5px;
+}
+
+.bien-item .close-btn {
+    background: none;
+    border: none;
+    color: red;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* Style du formulaire */
+.form-container {
+    background: #f1f1f1;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+legend {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0 10px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.form-group {
+    flex: 1 1 calc(50% - 10px);
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+input[readonly] {
+    background: #e0e0e0;
+    cursor: not-allowed;
+}
+
+/* Media Queries pour le menu des biens */
+@media (max-width: 768px) {
+    .bien-tabs {
+        gap: 8px;
+        /* Réduire l'espace entre les éléments pour les petits écrans */
+    }
+
+    .bien-link {
+        padding: 8px 12px;
+        /* Ajuster le padding pour les petits écrans */
+        font-size: 12px;
+        /* Réduire la taille de la police pour les petits écrans */
+    }
+}
+
+@media (max-width: 480px) {
+    .bien-tabs {
+        gap: 5px;
+        /* Réduire encore l'espace pour les très petits écrans */
+        flex-direction: column;
+        /* Empiler les éléments verticalement */
+    }
+
+    .bien-item {
+        width: 100%;
+        /* Faire en sorte que chaque élément prenne toute la largeur */
+    }
+
+    .bien-link {
+        padding: 6px 10px;
+        /* Ajuster le padding pour les très petits écrans */
+        font-size: 10px;
+        /* Réduire encore la taille de la police */
+        width: 100%;
+        /* Faire en sorte que le lien prenne toute la largeur */
+        text-align: center;
+        /* Centrer le texte */
+    }
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'Adresse</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="adresse4.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <ul class="bien-tabs">
+            <li class="bien-item active">
+                <a class="bien-link">Bien n° <strong>1</strong></a>
+                <i class="fas fa-times"></i>
+            </li>
+        </ul>
+
+        <fieldset class="form-container">
+            <legend>Adresse</legend>
+            <form>
+                <div class="form-group">
+                    <label for="rue">Rue *</label>
+                    <input type="text" id="rue" value="Rue Léon François">
+                </div>
+                <div class="form-group">
+                    <label for="numero">Numéro *</label>
+                    <input type="text" id="numero" value="48">
+                </div>
+                <div class="form-group">
+                    <label for="code-postal">Code postal *</label>
+                    <input type="text" id="code-postal" value="5170">
+                </div>
+                <div class="form-group">
+                    <label for="ville">Ville *</label>
+                    <input type="text" id="ville" value="Profondeville">
+                </div>
+                <div class="form-group">
+                    <label for="pays">Pays *</label>
+                    <input type="text" id="pays" value="Belgique" readonly>
+                </div>
+            </form>
+        </fieldset>
+    </div>
+
+</body>
+
+</html>

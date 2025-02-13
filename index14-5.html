@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .menu {
+            width: 250px;
+            border: 1px solid #ddd;
+            background-color: white;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu-item {
+            padding: 10px 15px;
+            color: #333;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .menu-item:hover,
+        .menu-item.selected {
+            background-color: #333;
+            color: white;
+            position: relative;
+        }
+
+        .menu-item:hover::after,
+        .menu-item.selected::after {
+            content: '';
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            /* Centre le triangle verticalement */
+            transform: translateY(-50%);
+            /* Ajuste la position pour centrer parfaitement */
+            width: 0;
+            height: 0;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-left: 20px solid #333;
+            z-index: 1;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="menu">
+        <li class="menu-item selected">Général</li>
+        <li class="menu-item">Assureur précédent</li>
+        <li class="menu-item">Sinistres sur 5 ans</li>
+        <li class="menu-item">Autres conducteurs</li>
+        <li class="menu-item">Utilisation du véhicule</li>
+        <li class="menu-item">Véhicule</li>
+        <li class="menu-item">Remorques</li>
+        <li class="menu-item">Formule choisie et confirmation</li>
+    </ul>
+
+    <script>
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('mouseover', () => {
+                if (!item.classList.contains('selected')) {
+                    document.querySelectorAll('.menu-item').forEach(i => i.classList.remove('selected'));
+                    item.classList.add('selected');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
